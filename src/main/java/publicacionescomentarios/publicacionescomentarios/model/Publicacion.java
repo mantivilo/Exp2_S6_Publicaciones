@@ -10,7 +10,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Publicacion {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "publicacion_seq")
+    @SequenceGenerator(name = "publicacion_seq", sequenceName = "publicacion_seq", allocationSize = 1)
     @Column(name = "ID_PUBLICACION")
     private Long idPublicacion;
 
