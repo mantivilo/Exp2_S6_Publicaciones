@@ -19,7 +19,6 @@ public class Publicacion {
     private String descPublicacion;
 
     @OneToMany(mappedBy = "publicacion", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    //@JsonIgnoreProperties("publicacion")
     private List<Comentario> comentarios;
 
     public Long getIdPublicacion() {
