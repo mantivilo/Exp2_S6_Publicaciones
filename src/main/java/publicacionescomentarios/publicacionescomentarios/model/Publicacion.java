@@ -1,4 +1,5 @@
 package publicacionescomentarios.publicacionescomentarios.model;
+import org.springframework.hateoas.RepresentationModel;
 
 import jakarta.persistence.*;
 import java.util.List;
@@ -8,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 @Table(name = "PUBLICACION")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class Publicacion {
+public class Publicacion extends RepresentationModel<Publicacion> {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "publicacion_seq")
     @SequenceGenerator(name = "publicacion_seq", sequenceName = "publicacion_seq", allocationSize = 1)
